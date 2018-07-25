@@ -8,9 +8,9 @@ public class UserTestSuite {
     @Test
     public void testDefaultSharingStrategies() {
         //Given
-        final Millenials millenials = new Millenials("Millenial");
-        final YGeneration yGeneration = new YGeneration("YGeneration");
-        final ZGeneration zGeneration = new ZGeneration("ZGeneration");
+        final User millenials = new Millenials("Millenial");
+        final User yGeneration = new YGeneration("YGeneration");
+        final User zGeneration = new ZGeneration("ZGeneration");
         //When & Then
         assertEquals("Facebook", millenials.getSocialPublisher().share());
         assertEquals("Snapchat", yGeneration.getSocialPublisher().share());
@@ -20,9 +20,9 @@ public class UserTestSuite {
     @Test
     public void testIndividualSharingStrategy() {
         //Given
-        final Millenials millenials = new Millenials("Millenial");
-        final YGeneration yGeneration = new YGeneration("YGeneration");
-        final ZGeneration zGeneration = new ZGeneration("ZGeneration");
+        final User millenials = new Millenials("Millenial");
+        final User yGeneration = new YGeneration("YGeneration");
+        final User zGeneration = new ZGeneration("ZGeneration");
         //When
         millenials.setSocialPublisher(new SnapchatPublisher());
         yGeneration.setSocialPublisher(new FacebookPublisher());
