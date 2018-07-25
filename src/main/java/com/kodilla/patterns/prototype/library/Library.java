@@ -3,15 +3,20 @@ package com.kodilla.patterns.prototype.library;
 import java.util.HashSet;
 import java.util.Set;
 
-final class Library extends Prototype {
+final class Library<T> implements Cloneable {
     final private String name;
-    private Set<Book> books = new HashSet<>();
+    private Set<T> books = new HashSet<>();
+
+    @Override
+    public T clone() throws CloneNotSupportedException {
+        return (T) super.clone();
+    }
 
     Library(final String name) {
         this.name = name;
     }
 
-    Set<Book> getBooks() {
+    Set<T> getBooks() {
         return books;
     }
 
@@ -19,7 +24,7 @@ final class Library extends Prototype {
         return name;
     }
 
-    void addBook(Book book) {
+    void addBook(T book) {
         books.add(book);
     }
 
@@ -30,7 +35,7 @@ final class Library extends Prototype {
     Library deepCopy() throws CloneNotSupportedException {
         Library cloneLibrary = (Library) super.clone();
         cloneLibrary.books = new HashSet<>();
-        for (Book book : books) {
+        for (T book : books) {
             cloneLibrary.addBook(book);
         }
         return cloneLibrary;
