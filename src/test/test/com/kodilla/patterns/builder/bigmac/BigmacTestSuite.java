@@ -22,5 +22,4 @@ public class BigmacTestSuite {
         assertEquals("normal", testBigmac.getBun());
         assertEquals("spicy", testBigmac.getSauce());
     }
-
 }

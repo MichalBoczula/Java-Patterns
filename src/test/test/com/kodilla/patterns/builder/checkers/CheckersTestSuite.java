@@ -1,5 +1,6 @@
-package com.kodilla.patterns.builder.checkers;
+package test.com.kodilla.patterns.builder.checkers;
 
+import com.kodilla.patterns.builder.checkers.*;
 import org.junit.Assert;
 import org.junit.Test;
 
